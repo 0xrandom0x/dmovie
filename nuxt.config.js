@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Streamo - Netflix Like VueJs Website Template',
+    title: 'DMovie - Netflix Like VueJs Website Template',
     htmlAttrs: {
       lang: 'en'
     },

@@ -5,7 +5,7 @@
             <swiper class="swiper lg:h-screen" :options="swiperOption">
                 <swiper-slide class="flex items-center animation-style-01 bg-no-repeat bg-cover bg-center bg-[url('/images/slider/background-image-04.png')] before:">
                     <div class="slider-content">
-                        <span> Welcome to Streamo</span>
+                        <span> Welcome to DMovie</span>
                         <h1 class="title"> Best Streaming</h1>
                         <p> Lorem ipsum dolor sit amet, coectetur adipisicing elit, sed do eiusmod tempor incidiunt ut laqua. Ut enim ad minim veniam, quis nullamco laboris</p>
                         <n-link to="/contact" class="">Get Started</n-link>
@@ -13,7 +13,7 @@
                 </swiper-slide>
                 <swiper-slide class="flex items-center animation-style-01 bg-no-repeat bg-cover bg-center bg-[url('/images/slider/background-image-03.jpg')]">
                     <div class="slider-content">
-                        <span>Welcome to Streamo</span>
+                        <span>Welcome to DMovie</span>
                         <h1 class="title"> Best Streaming</h1>
                         <p>Lorem ipsum dolor sit amet, coectetur adipisicing elit, sed do eiusmod tempor incidiunt ut laqua. Ut enim ad minim veniam, quis nullamco laboris </p>
                         <n-link to="/contact" class="">Get Started</n-link>

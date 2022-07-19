@@ -33,7 +33,7 @@
                         <i class="text-white zmdi zmdi-globe-alt"></i>
                     </div>
                     <div class="flex items-center">
-                        <a href="#/" class="mt-1 text-[16px] text-white">www.streamo.net</a>
+                        <a href="#/" class="mt-1 text-[16px] text-white">www.DMovie.net</a>
                     </div>
                 </li>
             </ul>
