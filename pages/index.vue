@@ -5,25 +5,29 @@
         <div class="flex justify-between flex-row items-center px-[15px] md:px-[30px] xl:px-[50px] 2xl:px-[100px] mx-auto py-[10px] z-999 w-full absolute top-0 left-0 right-0">
 
             <div class="flex items-center">
-                <Logo logLink="/home"/>
+              <div>
+                <n-link to="/home">
+                  <h2 class="text-white">DMovie</h2>
+                </n-link>
+              </div>
             </div>
 
-            <div class="flex items-center">
-                <BtnDefault
-                    :btnLink="'/login'"
-                    :btnClass="'py-[13px] px-[30px] bg-[#f4181c] text-white hover:bg-white hover:text-[#333333] text-[18px] font-semibold'"
-                    :btnText="'Sign In'"
-                    class="ml-[10px] sm:ml-[15px]"
-                />
-            </div>
+<!--            <div class="flex items-center">-->
+<!--                <BtnDefault-->
+<!--                    :btnLink="'/login'"-->
+<!--                    :btnClass="'py-[13px] px-[30px] bg-[#f4181c] text-white hover:bg-white hover:text-[#333333] text-[18px] font-semibold'"-->
+<!--                    :btnText="'Sign In'"-->
+<!--                    class="ml-[10px] sm:ml-[15px]"-->
+<!--                />-->
+<!--            </div>-->
         </div>
 
         <div class="hero-landing h-screen relative before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-[#000000] before:opacity-60 flex items-center justify-center" style="background-image:url(/images/bg/bg-4.jpg);">
             <div class="container">
                 <div class="landing-hero-content text-center relative max-w-3xl mx-auto">
-                    <h1 class="title text-white font-semibold text-[34px] md:text-[50px] sm:text-[40px] lg:text-[60px] leading-[1.13] mx-auto">Endless movies, TV shows, and more.</h1>
-                    <h4 class="sub-title text-white text-[20px] md:text-[24px] leading-[1.13] mt-[27px] mb-[28px] font-normal">Enjoy anywhere. Unsubscribe anytime.</h4>
-                    <p class="text-white font-[17px] mb-[20px]">Ready to watch? Enter your email to create or restart your membership.</p>
+                    <h1 class="title text-white font-semibold text-[34px] md:text-[50px] sm:text-[40px] lg:text-[60px] leading-[1.13] mx-auto">decentralized movies, TV shows, and more.</h1>
+                    <h4 class="sub-title text-white text-[20px] md:text-[24px] leading-[1.13] mt-[27px] mb-[28px] font-normal">Enjoy anytime, anywhere.</h4>
+                    <p class="text-white font-[17px] mb-[20px]">Ready to watch? Enter your email and wait for our product to go live.</p>
 
                     <div class="create-membership-wrap mt-8 mx-auto relative">
                         <input placeholder="Email Address" class="w-full bg-white pl-4 pr-[175px] py-5 relative rounded-[4px] text-black placeholder:text-black focus:outline-none focus:shadow-outline">
@@ -134,13 +138,13 @@
             </div>
         </div>
 
-        <div class="container-fluid px-4 xl:px-10 2xl:px-[100px] py-[45px] bg-[#000000]">
-            <FooterTop/>
-        </div>
+<!--        <div class="container-fluid px-4 xl:px-10 2xl:px-[100px] py-[45px] bg-[#000000]">-->
+<!--            <FooterTop/>-->
+<!--        </div>-->
 
-        <div class="container-fluid px-4 xl:px-10 2xl:px-[100px] py-[20px] bg-[#000000] border-t-1 border-[#203544] shadow-[0_0_10px_rgba(0,0,0,0.3)]">
-            <FooterBottom/>
-        </div>
+<!--        <div class="container-fluid px-4 xl:px-10 2xl:px-[100px] py-[20px] bg-[#000000] border-t-1 border-[#203544] shadow-[0_0_10px_rgba(0,0,0,0.3)]">-->
+<!--            <FooterBottom/>-->
+<!--        </div>-->
 
     </div>
 
