@@ -1,16 +1,23 @@
 <template>
-
+    <!-- 头部  *chason* -->
     <div class="flex justify-between flex-col md:flex-row items-center px-[15px] md:px-[30px] xl:px-[50px] 2xl:px-[100px] mx-auto py-5 lg:py-[0px] shadow-[0_2px_18px_rgba(0,0,0,0.1)] z-999 w-full bg-[#000000]">
 
         <div class="flex items-center">
             <Logo logLink="/home"/>
-            <MainMenu class="2xl:ml-[100px] ml-[50px]"/>
+            <div class="mainmenu"></div>
+            <!-- <MainMenu class="2xl:ml-[100px] ml-[50px]"/> -->
         </div>
 
         <div class="flex items-center mt-4 md:mt-0">
-            <HeaderSearch/>
-            <Notification/>
-            <Profile/>
+            <!-- <HeaderSearch/> -->
+            <!-- <Notification/> -->
+            <!-- <Profile/> -->
+            <BtnDefault
+                :btnLink="'/contact'"
+                :btnClass="'py-[5px] px-[15px] bg-[#f4181c] text-white font-medium hover:bg-white hover:text-[#333333]'"
+                :btnText="'Upload'"
+                class="ml-[10px] sm:ml-[15px]"
+            />
             <BtnDefault
                 :btnLink="'/contact'"
                 :btnClass="'py-[5px] px-[15px] bg-[#f4181c] text-white font-medium hover:bg-white hover:text-[#333333]'"
@@ -53,5 +60,5 @@ export default {
 }
 </script>
 <style lang='scss'>
-
+.mainmenu {height: 94px;}
 </style>
