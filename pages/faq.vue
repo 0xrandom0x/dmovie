@@ -11,7 +11,7 @@
                 :BreadcrumbEnd="'Faq'"
             />
         </div>
-
+    
         <div class="container-fluid px-4 xl:px-10 2xl:px-[100px] py-[50px] md:py-[80px] bg-[#12222d]">
             <FaqArea />
         </div>
