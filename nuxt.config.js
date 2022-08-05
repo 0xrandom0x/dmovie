@@ -53,6 +53,9 @@ export default {
     },
     {
       src: '~/plugins/vue-nav-tabs.js'
+    },
+    {
+      src: '~/plugins/element-ui.js'
     }
   ],
 
