@@ -13,6 +13,7 @@
     "core-js": "^3.19.3",
     "element-ui": "^2.15.9",
     "minimist": "^1.2.5",
+    "nft.storage": "^7.0.0",
     "nuxt": "^2.15.8",
     "swiper": "5.4.5",
     "v-click-outside": "^3.1.2",

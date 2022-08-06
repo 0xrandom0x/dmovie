@@ -49,7 +49,7 @@
     <el-dialog title="Upload a video" :visible.sync="dialogVisible" width="50%" center :before-close="handleClose">
       
       <div class="upload-content">
-        <el-upload class="upload-demo" :on-change="handleChange" :on-success="handleSuccess" :file-list="fileList" drag action="https://jsonplaceholder.typicode.com/posts/" multiple>
+        <el-upload class="upload-demo" :on-change="handleChange" :on-success="handleSuccess" :file-list="fileList" drag  multiple>
           <i class="el-icon-upload"></i>
           <div class="el-upload__text">Drag and drop your files here, Or<em>Click</em></div>
           <!-- <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div> -->
@@ -69,7 +69,8 @@
 </template>
 
 <script>
-// import { client } from '../../plugins/web3Store';
+const apiToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDk2YTQzQ0Q0MEUwZkRhODU2Q2JGOUYzN0Y5MkJkNTM2RjRlODAwNzIiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NTk3ODE2MjM0ODEsIm5hbWUiOiJkbW92ZSJ9.tsUlUq7BtnFAXllyM11aKLS0mIJhFJESHPUmrUQ3wdw"
+const url = "https://api.web3.storage/upload"
 export default {
   components: {
     Logo: () => import('@/components/logo/Logo'),
@@ -92,6 +93,8 @@ export default {
     },
     handleChange(file, fileList){
       console.log('file, fileList', file, fileList);
+      const cid = client.put(file)
+      console.log(cid)
     },
     handleClose(done) {
       this.$confirm('确认关闭？')
