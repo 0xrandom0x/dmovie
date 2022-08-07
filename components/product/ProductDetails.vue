@@ -1,9 +1,9 @@
 <template>
     <div class="">
-
+      <!-- *chason* -->
         <div class=" bg-[#1E272D] flex items-center justify-center py-2 sm:py-7 px-3 sm:flex-row flex-col">
-            <h2 class="sm:text-[26px] text-[22px] text-white font-semibold mr-3">{{ product.title }}</h2>
-            <ul class="flex items-center flex-wrap justify-center">
+            <h2 class="sm:text-[26px] text-[22px] text-white font-semibold mr-3">{{ product.name }}</h2>
+            <!-- <ul class="flex items-center flex-wrap justify-center">
                 <li class="text-[#dddddd] md:text-[16px] text-[14px] mr-2 relative before:absolute before:w-[2px] before:h-[12px] before:bg-[#dddddd] before:top-1/2 before:right-0 before:transform before:-translate-y-1/2 pr-2">
                     <span>{{product.duration}}</span>
                 </li>
@@ -18,7 +18,7 @@
                 <li class="text-[#dddddd] md:text-[16px] text-[14px] mr-2">
                     <span>{{product.permit}}</span>
                 </li>
-            </ul>
+            </ul> -->
         </div>
 
         <div class="bg-[#000000] py-[50px]">
@@ -30,10 +30,10 @@
                         controls
                         crossorigin
                         playsinline
-                        :data-poster="product.posterImage"
+                        :data-poster="product.imgsrc"
                     >
                         <source
-                            :src="product.video"
+                            :src="product.movieLink"
                             type="video/mp4"
                         />
                     </video>
@@ -41,13 +41,13 @@
                 </client-only>
             </div>
             <div class="product-details-content container">
-                <ul class="my-5">
+                <!-- <ul class="my-5">
                     <li v-for="(item, index) in product.items" :key="index" class="text-[16px] mb-3 text-[#dddddd] font-light">
                         <span class="text-[18px] font-semibold mr-1 text-[#f4181c]">{{item.label}} </span>{{item.labeldesc}}
                     </li>
                 </ul>
                 <p class="text-[#dddddd] font-normal text-[14px]">{{ product.description }}</p>
-                <p class="text-[#dddddd] font-normal text-[14px]">{{ product.descriptionTwo }}</p>
+                <p class="text-[#dddddd] font-normal text-[14px]">{{ product.descriptionTwo }}</p> -->
                 <div class="flex items-center justify-between flex-wrap mt-9 py-3 border-y-1 border-[#dddddd]">
                     <div class="flex items-center">
                         <span class="text-[18px] font-semibold text-[#f4181c]">Share:</span>
@@ -71,7 +71,7 @@
             </div>
         </div>
 
-        <div  class="bg-[#000000] pb-[50px]">
+        <!-- <div  class="bg-[#000000] pb-[50px]">
             <div class="container">
                 <div class="awardedmovie-area relative">
                     <Swiper :options="relatedOption">
@@ -85,7 +85,7 @@
                     </Swiper>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </template>
@@ -93,9 +93,9 @@
 <script>
 
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
-import seriesData from "@/data/new/seriesdata.json";
+// import seriesData from "@/data/new/seriesdata.json";
 export default {
-    props: ['product'],
+    // props: ['product'],
     components: {
         MainHeader: () => import('@/components/header/MainHeader'),
         OffcanvasSidebar: () => import('@/components/header/OffcanvasSidebar'),
@@ -107,7 +107,8 @@ export default {
 
     data() {
         return {
-            seriesData,
+            product: {},
+            // seriesData,
             options: { quality: { default: '1080p' } },
             relatedOption: {
                 loop: true,
@@ -144,6 +145,9 @@ export default {
         }
     },
     mounted () {
+      this.product = this.$route.query
+      console.log('this.$route.path', this.$route.query);
+      console.log('this.product11', this.product);
         console.log(this.product.items);
         console.log(this.product.category);
     },

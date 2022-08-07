@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nuxtjs/dayjs": "^1.4.1",
+    "axios": "^0.27.2",
     "core-js": "^3.19.3",
     "element-ui": "^2.15.9",
     "minimist": "^1.2.5",

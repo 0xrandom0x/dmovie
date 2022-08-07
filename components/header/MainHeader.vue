@@ -30,12 +30,6 @@
           class="text-[14px] inline-block rounded-[3px] transition-all duration-300 py-[5px] px-[15px] bg-[#f4181c] text-white font-medium hover:bg-white hover:text-[#333333]">
           Subscribe Now</div>
       </div>
-      <!-- <BtnDefault
-                :btnLink="'/contact'"
-                :btnClass="'py-[5px] px-[15px] bg-[#f4181c] text-white font-medium hover:bg-white hover:text-[#333333]'"
-                :btnText="'Subscribe Now'"
-                class="ml-[10px] sm:ml-[15px]"
-            /> -->
       <!-- Offcanvas Button Start -->
       <div class="lg:hidden block leading-[1rem] ml-[10px] sm:ml-[15px]">
         <button class="overflow-hidden bg-transparent h-[18px] relative w-[26px]"
@@ -49,19 +43,13 @@
     <el-dialog title="Upload a video" :visible.sync="dialogVisible" width="50%" center :before-close="handleClose">
       
       <div class="upload-content">
-        <el-upload class="upload-demo" :on-change="handleChange" :on-success="handleSuccess" :file-list="fileList" drag  multiple>
+        <el-upload class="upload-demo" :data="uploadData" :action="uploadUrl" :headers="{ Authorization: apiToken }" :before-upload="handleBeforeUpload" :on-change="handleChange" :on-success="handleSuccess" :file-list="fileList" drag  multiple>
           <i class="el-icon-upload"></i>
           <div class="el-upload__text">Drag and drop your files here, Or<em>Click</em></div>
-          <!-- <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div> -->
+          <div class="el-upload__tip" slot="tip">只能上传mp4文件</div>
         </el-upload>
       </div>
 
-
-
-      <!-- <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="danger" @click="dialogVisible = false">确 定</el-button>
-      </span> -->
       <canvas id="canvassrc" style="display: none"></canvas>
     </el-dialog>
   </div>
@@ -69,7 +57,7 @@
 </template>
 
 <script>
-const apiToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDk2YTQzQ0Q0MEUwZkRhODU2Q2JGOUYzN0Y5MkJkNTM2RjRlODAwNzIiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NTk3ODE2MjM0ODEsIm5hbWUiOiJkbW92ZSJ9.tsUlUq7BtnFAXllyM11aKLS0mIJhFJESHPUmrUQ3wdw"
+const apiToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDk2YTQzQ0Q0MEUwZkRhODU2Q2JGOUYzN0Y5MkJkNTM2RjRlODAwNzIiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NTk3ODE2MjM0ODEsIm5hbWUiOiJkbW92ZSJ9.tsUlUq7BtnFAXllyM11aKLS0mIJhFJESHPUmrUQ3wdw"
 const url = "https://api.web3.storage/upload"
 export default {
   components: {
@@ -83,18 +71,37 @@ export default {
   data() {
     return {
       dialogVisible: false,
-      fileList: []
+      fileList: [],
+      apiToken: apiToken,
+      uploadUrl: url,
+      uploadData: {
+        name: '',
+        size: null,
+        type: ''
+      }
     };
   },
   methods: {
+    handleBeforeUpload (file) {
+      // 限制文件格式类型
+      const ismp4 = file.name.split('.')[1].toLowerCase() === 'mp4'
+      if (!ismp4) {
+        this.$message({
+          message: '只能上传.mp4文件',
+          type: 'error'
+        })
+        return false;
+      }
+    },
     handleSuccess(response, file, fileList){
       // console.log('client', client);
       console.log('response, file, fileList', response, file, fileList);
     },
     handleChange(file, fileList){
       console.log('file, fileList', file, fileList);
-      const cid = client.put(file)
-      console.log(cid)
+      this.uploadData.name = file.name
+      this.uploadData.size = file.size
+      this.uploadData.type = file.raw.type
     },
     handleClose(done) {
       this.$confirm('确认关闭？')
@@ -114,7 +121,6 @@ export default {
     },
     uploadVideo() {
       this.dialogVisible = true
-      console.log('112121',);
     }
   }
 }
@@ -123,5 +129,5 @@ export default {
 .mainmenu { height: 94px; }
 .cursor { cursor: pointer; }
 .el-dialog__wrapper .el-dialog.el-dialog--center { border-radius: 10px !important;}
-.upload-content { height: 250px; padding: 0 155px; text-align: center; }
+.upload-content { height: 250px; padding: 0 155px; text-align: center; overflow: auto; }
 </style>

@@ -1,6 +1,7 @@
 <template>
+    <!-- *chason* 分页  -->
     <div>
-        <div class="romantic-movie relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
+        <div class="romantic-movie relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 2xl:grid-cols-6 gap-8">
             <div class="" v-for="(product, Index) in getItems" :key="Index">
                 <SingleProduct 
                     :product="product"
@@ -20,27 +21,35 @@
 </template>
 
 <script>
-import movieData from "@/data/new/moviedata.json";
+
+// import movieData from "@/data/new/moviedata.json";
+let showUrl = 'https://dweb.link/ipfs/'
 export default {
+  props: {
+    videoList:{
+      type:Array,
+      default: []
+    },
+  },
     components: {
         SingleProduct: () => import('@/components/product/SingleProduct')
     },
     data () {
         return {
-            movieData,
             movieSeries: [],
             currentPage: 1,
             perPage: 12,
         }
     },
     mounted () {
-        this.movieSeries = this.movieData.filter(product=> product.category.includes("romantic"))
+      
     },
     computed: {
         getItems() {
             let start = (this.currentPage - 1) * this.perPage;
             let end = this.currentPage * this.perPage;
-            return this.movieSeries.slice(start, end);
+            let data = this.movieSeries.slice(start, end)
+            return data
         },
         getPaginateCount() {
             return Math.ceil(this.movieSeries.length / this.perPage);
@@ -50,6 +59,20 @@ export default {
         paginateClickCallback(pageNum) {
             this.currentPage = Number(pageNum);
         },
+    },
+    watch: {
+      videoList:  {
+        immediate: true,
+        deep: true,
+        handler(val){
+          val.forEach(ele => {
+            this.$set(ele, 'movieLink', showUrl + ele.cid)
+            this.$set(ele, 'routerLink', 'Land And Sea')
+          });
+            this.movieSeries.splice(0, this.movieSeries.length, ...val)
+            console.log('this.movieSeries', this.movieSeries);
+        },
+      }
     }
 }
 </script>
