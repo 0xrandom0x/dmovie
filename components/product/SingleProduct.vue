@@ -7,23 +7,13 @@
         class="w-full block group-hover:scale-[1.2] transition-all duration-300">
         <!-- <img v-if="product.imgsrc" class="default-img transition-all duration-500 w-full" :src="product.movieLink" :alt="product.name"> -->
         <video v-if="product.movieLink" :src="product.movieLink" :controls="true" oncontextmenu="return false"  class="default-img transition-all duration-500 w-full" ></video>
-        <img v-else class="default-img transition-all duration-500 w-full" src="../../static/images/video/videoLoading.png" :alt="product.name">
       </n-link>
     </div>
     <div
       class="product-content flex flex-col my-4 text-center justify-center opacity-0 group-hover:opacity-100 absolute -bottom-[50px] group-hover:bottom-0 transition-all duration-500 z-999 w-full">
 
-      <h3>
-        <n-link class="text-[20px] font-semibold hover:text-yellow transition-all duration-300 text-white"
-          :to="`${(PageLink)}/${slugify(product.routerLink)}?name=${params.name}&movieLink=${params.movieLink}`">{{ product.name }}</n-link>
-      </h3>
 
       <div class="flex justify-center mt-[5px]">
-        <div class="quality flex items-center">
-          <span class="mr-1 font-medium text-white text-[15px]">Quality : </span><label class="text-white">{{
-              product.quality
-          }}</label>
-        </div>
         <div>
           <span class="text-white hidden">Date:{{ product.date }}</span>
         </div>
