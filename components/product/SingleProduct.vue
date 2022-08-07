@@ -5,8 +5,9 @@
       class="product-img relative overflow-hidden block rounded-[10px] before:content-[''] before:bottom-0 before:left-0 before:opacity-0 before:absolute before:right-0 before:z-20 before:pointer-events-none before:rounded-[10px] before:transition-all before:duration-500 group-hover:before:opacity-100 before:w-full before:h-1/2 group-hover:before:h-full">
       <n-link :to="`${(PageLink)}/${slugify(product.routerLink)}?name=${params.name}&movieLink=${params.movieLink}`"
         class="w-full block group-hover:scale-[1.2] transition-all duration-300">
-        <img v-if="product.imgsrc" class="default-img transition-all duration-500 w-full" :src="product.movieLink" :alt="product.name">
-        <img v-else class="default-img transition-all duration-500 w-full" src="../../static/images/product/comedy-series-1.png" :alt="product.name">
+        <!-- <img v-if="product.imgsrc" class="default-img transition-all duration-500 w-full" :src="product.movieLink" :alt="product.name"> -->
+        <video v-if="product.movieLink" :src="product.movieLink" :controls="true" oncontextmenu="return false"  class="default-img transition-all duration-500 w-full" ></video>
+        <img v-else class="default-img transition-all duration-500 w-full" src="../../static/images/video/videoLoading.png" :alt="product.name">
       </n-link>
     </div>
     <div

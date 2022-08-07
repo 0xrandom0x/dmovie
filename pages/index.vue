@@ -5,7 +5,7 @@
         <MainHeader/>
 
 
-        <div class="container-fluid px-4 xl:px-10 2xl:px-[100px] py-[50px] bg-[#000000]">
+        <div class="container-fluid px-4 xl:px-10 2xl:px-[100px] py-[50px] bg-[#000000] minVideo">
             <AllRomanticMovie :videoList="videoList" />
         </div>
 
@@ -72,4 +72,5 @@ export default {
 </script>
 
 <style lang='scss'>
+.minVideo { min-height: 600px; }
 </style>

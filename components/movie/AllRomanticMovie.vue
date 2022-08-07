@@ -44,8 +44,15 @@ export default {
     mounted () {
       
     },
+    created(){
+      this.getItems.splice(0, this.getItems.length)
+      for(let i in 6){
+        this.getItems.push({ name: 'Movie Loading', movieLink: '' })
+      }
+    },
     computed: {
         getItems() {
+          
             let start = (this.currentPage - 1) * this.perPage;
             let end = this.currentPage * this.perPage;
             let data = this.movieSeries.slice(start, end)
@@ -70,7 +77,6 @@ export default {
             this.$set(ele, 'routerLink', 'Land And Sea')
           });
             this.movieSeries.splice(0, this.movieSeries.length, ...val)
-            console.log('this.movieSeries', this.movieSeries);
         },
       }
     }

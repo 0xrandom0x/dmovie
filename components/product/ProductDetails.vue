@@ -29,13 +29,13 @@
                     <video
                         controls
                         crossorigin
-                        playsinline
+                        playsinline :src="product.movieLink"
                         :data-poster="product.imgsrc"
                     >
-                        <source
+                        <!-- <source
                             :src="product.movieLink"
-                            type="video/mp4"
-                        />
+                            type="mp4"
+                        /> -->
                     </video>
                 </vue-plyr>
                 </client-only>
@@ -148,8 +148,6 @@ export default {
       this.product = this.$route.query
       console.log('this.$route.path', this.$route.query);
       console.log('this.product11', this.product);
-        console.log(this.product.items);
-        console.log(this.product.category);
     },
 
     slugify(text) {
