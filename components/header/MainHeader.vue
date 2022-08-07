@@ -95,10 +95,10 @@ export default {
     },
     handleSuccess(response, file, fileList){
       // console.log('client', client);
-      console.log('response, file, fileList', response, file, fileList);
+      // console.log('response, file, fileList', response, file, fileList);
     },
     handleChange(file, fileList){
-      console.log('file, fileList', file, fileList);
+      // console.log('file, fileList', file, fileList);
       this.uploadData.name = file.name
       this.uploadData.size = file.size
       this.uploadData.type = file.raw.type

@@ -45,21 +45,20 @@ export default {
         }
     },
     created(){
-      console.log('111', 1111);
       let _that = this
       axios.get(_that.uploadUrl, config)
         .then(function (response) {
           // handle success
           if(response.status === 200){
             _that.videoList.splice(0, _that.videoList.length, ...response.data)
-            console.log(_that.videoList,12345)
+            // console.log(_that.videoList,12345)
           }else{
             _that.$message.error("数据请求失败")
           }
         })
         .catch(function (error) {
           // handle error
-          console.log(error);
+          // console.log(error);
         })
         .then(function () {
           // always executed

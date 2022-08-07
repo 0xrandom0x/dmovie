@@ -67,9 +67,7 @@ export default {
       if(!video) return
       video.crossOrigin = 'anonymous'
       video.currentTime = 1 // 第一帧
-      console.log('22222222', video.clientWidth);
       video.oncanplay = () => {
-        console.log('', 111111);
         canvas.width = video.clientWidth; // 获取视频宽度
         canvas.height = video.clientHeight; //获取视频高度
         // 利用canvas对象方法绘图
@@ -77,7 +75,7 @@ export default {
         ctx.drawImage(video, 0, 0, video.clientWidth, video.clientHeight)
         // 转换成base64形式
         this.imgsrc = canvas.toDataURL("image/png") // 截取后的视频封面
-        console.log('this.imgsrc', this.imgsrc);
+        // console.log('this.imgsrc', this.imgsrc);
         this.product.imgsrc = this.imgsrc
       }
     },

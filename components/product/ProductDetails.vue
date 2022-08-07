@@ -146,8 +146,8 @@ export default {
     },
     mounted () {
       this.product = this.$route.query
-      console.log('this.$route.path', this.$route.query);
-      console.log('this.product11', this.product);
+      // console.log('this.$route.path', this.$route.query);
+      // console.log('this.product11', this.product);
     },
 
     slugify(text) {
