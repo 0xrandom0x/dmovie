@@ -3,7 +3,7 @@
     <div>
         <div class="romantic-movie relative grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-8">
             <div class="" v-for="(product, Index) in getItems" :key="Index">
-                <SingleProduct 
+                <SingleProduct
                     :product="product"
                     :PageLink="'/movie'"
                     :btnLink="'/movie'"
@@ -38,11 +38,11 @@ export default {
         return {
             movieSeries: [],
             currentPage: 1,
-            perPage: 12,
+            perPage: 8,
         }
     },
     mounted () {
-      
+
     },
     created(){
       this.getItems.splice(0, this.getItems.length)
@@ -52,7 +52,7 @@ export default {
     },
     computed: {
         getItems() {
-          
+
             let start = (this.currentPage - 1) * this.perPage;
             let end = this.currentPage * this.perPage;
             let data = this.movieSeries.slice(start, end)
