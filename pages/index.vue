@@ -17,7 +17,7 @@
 </template>
 
 <script>
-const apiToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDk2YTQzQ0Q0MEUwZkRhODU2Q2JGOUYzN0Y5MkJkNTM2RjRlODAwNzIiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NTk3ODE2MjM0ODEsIm5hbWUiOiJkbW92ZSJ9.tsUlUq7BtnFAXllyM11aKLS0mIJhFJESHPUmrUQ3wdw"
+const apiToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDFBNmFFMDBmMjFmMURENkY5Yzc5MzI1REQyNDAzYWY5QjA2NUMwMDAiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NjA3MjAwMDI2NDAsIm5hbWUiOiJkbSJ9.LAwMt_zPwyH7uX0xJydVARiecrJWid10E62z0zZY5qo"
 const url = "https://api.web3.storage/user/uploads"
 
 const config = {
@@ -65,7 +65,7 @@ export default {
         });
     },
     mounted() {
-      
+
     },
 }
 </script>

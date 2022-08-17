@@ -4,7 +4,7 @@
     class="flex justify-between flex-col md:flex-row items-center px-[15px] md:px-[30px] xl:px-[50px] 2xl:px-[100px] mx-auto py-5 lg:py-[0px] shadow-[0_2px_18px_rgba(0,0,0,0.1)] z-999 w-full bg-[#000000]">
 
     <div class="flex items-center">
-      <Logo logLink="/home" />
+      <h1 style="color: #ffffff ; font-size: large"> Decentralized Video Sharing Platform</h1>
       <div class="mainmenu"></div>
       <!-- <MainMenu class="2xl:ml-[100px] ml-[50px]"/> -->
     </div>
@@ -25,11 +25,6 @@
           class="text-[14px] inline-block rounded-[3px] transition-all duration-300 py-[5px] px-[15px] bg-[#f4181c] text-white font-medium hover:bg-white hover:text-[#333333]">
           Upload</div>
       </div>
-      <div class="ml-[10px] sm:ml-[15px] cursor" @click="uploadVideo">
-        <div
-          class="text-[14px] inline-block rounded-[3px] transition-all duration-300 py-[5px] px-[15px] bg-[#f4181c] text-white font-medium hover:bg-white hover:text-[#333333]">
-          Subscribe Now</div>
-      </div>
       <!-- Offcanvas Button Start -->
       <div class="lg:hidden block leading-[1rem] ml-[10px] sm:ml-[15px]">
         <button class="overflow-hidden bg-transparent h-[18px] relative w-[26px]"
@@ -41,12 +36,12 @@
       <!-- Offcanvas Button End -->
     </div>
     <el-dialog title="Upload a video" :visible.sync="dialogVisible" width="50%" center :before-close="handleClose">
-      
+
       <div class="upload-content">
         <el-upload class="upload-demo" :data="uploadData" :action="uploadUrl" :headers="{ Authorization: apiToken }" :before-upload="handleBeforeUpload" :on-change="handleChange" :on-success="handleSuccess" :file-list="fileList" drag  multiple>
           <i class="el-icon-upload"></i>
           <div class="el-upload__text">Drag and drop your files here, Or<em>Click</em></div>
-          <div class="el-upload__tip" slot="tip">只能上传mp4文件</div>
+          <div class="el-upload__tip" slot="tip">Only upload mp4 file</div>
         </el-upload>
       </div>
 
@@ -57,7 +52,7 @@
 </template>
 
 <script>
-const apiToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDk2YTQzQ0Q0MEUwZkRhODU2Q2JGOUYzN0Y5MkJkNTM2RjRlODAwNzIiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NTk3ODE2MjM0ODEsIm5hbWUiOiJkbW92ZSJ9.tsUlUq7BtnFAXllyM11aKLS0mIJhFJESHPUmrUQ3wdw"
+const apiToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDFBNmFFMDBmMjFmMURENkY5Yzc5MzI1REQyNDAzYWY5QjA2NUMwMDAiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NjA3MjAwMDI2NDAsIm5hbWUiOiJkbSJ9.LAwMt_zPwyH7uX0xJydVARiecrJWid10E62z0zZY5qo"
 const url = "https://api.web3.storage/upload"
 export default {
   components: {
