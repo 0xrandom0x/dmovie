@@ -1,6 +1,6 @@
 <template>
   <!--  *chason* 播放 -->
-  <div class="product-wrap relative overflow-hidden rounded-[10px] mb-30 group block video-size" >
+  <div  class="product-wrap relative overflow-hidden rounded-[10px] mb-30 group block video-size" >
     <div
       class="product-img relative overflow-hidden block rounded-[10px] before:content-[''] before:bottom-0 before:left-0 before:opacity-0 before:absolute before:right-0 before:z-20 before:pointer-events-none before:rounded-[10px] before:transition-all before:duration-500 group-hover:before:opacity-100 before:w-full before:h-1/2 group-hover:before:h-full">
       <n-link :to="`${(PageLink)}/${slugify(product.routerLink)}?name=${params.name}&movieLink=${params.movieLink}`"
@@ -24,7 +24,7 @@
           class="text-[14px] inline-block rounded-[3px] transition-all duration-300 py-[6px] px-3 bg-[#f4181c] text-white font-medium hover:bg-white hover:text-[#333333] leading-[1]"
           :to="`${(btnLink)}/${slugify(product.routerLink)}?name=${params.name}&movieLink=${params.movieLink}`">Watch Now</n-link>
       </div>
-            
+
     </div>
        <!--  取第一帧 -->
       <video :src="product.movieLink" class="video-size video-position" controls="controls" id="upvideo">您的浏览器不支持视频播放</video>

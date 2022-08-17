@@ -52,13 +52,13 @@
                     <div class="flex items-center">
                         <span class="text-[18px] font-semibold text-[#f4181c]">Share:</span>
                         <div class="social-style-1 flex items-center">
-                            <a class="sm:h-[35px] sm:w-[35px] h-[30px] w-[30px] text-[14px] flex items-center justify-center bg-white text-[#18163a] hover:bg-[#f4181c] hover:text-white rounded-full sm:ml-3 ml-2" href="https://www.facebook.com/"> 
+                            <a class="sm:h-[35px] sm:w-[35px] h-[30px] w-[30px] text-[14px] flex items-center justify-center bg-white text-[#18163a] hover:bg-[#f4181c] hover:text-white rounded-full sm:ml-3 ml-2" href="https://www.facebook.com/">
                                 <i class="zmdi zmdi-facebook"></i>
                             </a>
-                            <a class="sm:h-[35px] sm:w-[35px] h-[30px] w-[30px] text-[14px] flex items-center justify-center bg-white text-[#18163a] hover:bg-[#f4181c] hover:text-white rounded-full sm:ml-3 ml-2" href="https://twitter.com/"> 
+                            <a class="sm:h-[35px] sm:w-[35px] h-[30px] w-[30px] text-[14px] flex items-center justify-center bg-white text-[#18163a] hover:bg-[#f4181c] hover:text-white rounded-full sm:ml-3 ml-2" href="https://twitter.com/">
                                 <i class="zmdi zmdi-twitter"></i>
                             </a>
-                            <a class="sm:h-[35px] sm:w-[35px] h-[30px] w-[30px] text-[14px] flex items-center justify-center bg-white text-[#18163a] hover:bg-[#f4181c] hover:text-white rounded-full sm:ml-3 ml-2" href="https://www.linkedin.com/"> 
+                            <a class="sm:h-[35px] sm:w-[35px] h-[30px] w-[30px] text-[14px] flex items-center justify-center bg-white text-[#18163a] hover:bg-[#f4181c] hover:text-white rounded-full sm:ml-3 ml-2" href="https://www.linkedin.com/">
                                 <i class="zmdi zmdi-linkedin"></i>
                             </a>
                         </div>
@@ -70,22 +70,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- <div  class="bg-[#000000] pb-[50px]">
-            <div class="container">
-                <div class="awardedmovie-area relative">
-                    <Swiper :options="relatedOption">
-                        <Swiper-Slide v-for="(product, Index) in seriesData" :key="Index">
-                            <SingleProduct 
-                                :product="product" 
-                                :PageLink="'/series'"
-                                :btnLink="'/series'"
-                            />
-                        </Swiper-Slide>
-                    </Swiper>
-                </div>
-            </div>
-        </div> -->
 
     </div>
 </template>

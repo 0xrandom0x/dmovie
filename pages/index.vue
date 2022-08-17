@@ -1,16 +1,12 @@
 <template>
     <!-- *chason* 主页 -->
-    <div>
+    <div style="background: #000000">
 
         <MainHeader/>
 
 
         <div class="container-fluid px-4 xl:px-10 2xl:px-[100px] py-[50px] bg-[#000000] minVideo">
             <AllRomanticMovie :videoList="videoList" />
-        </div>
-
-        <div class="container-fluid px-4 xl:px-10 2xl:px-[100px] py-[20px] bg-[#12222d] border-t-1 border-[#203544] shadow-[0_0_10px_rgba(0,0,0,0.3)]">
-            <FooterBottom/>
         </div>
 
     </div>
@@ -71,5 +67,13 @@ export default {
 </script>
 
 <style lang='scss'>
-.minVideo { min-height: 600px; }
+@media screen and (min-width: 1599px){
+    .minVideo { min-height: 1000px; }
+}
+@media screen and (max-width: 1600px) and (min-width: 1440px){
+    .minVideo { min-height: 665px; }
+}
+@media screen and (max-width: 1439px) and (min-width: 500px){
+    .minVideo { min-height: 600px; }
+}
 </style>
